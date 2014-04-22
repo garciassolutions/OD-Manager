@@ -1,0 +1,18 @@
+create database sales_db;
+use sales_db;
+
+create table customers (id int, name char(50), date char(25), address char(50), city char(25), state char(25), zip char(10), phone char(15), cell char(15), email char(50), type int, brand char(50), serial char(50), service char(50), laptop_ad char(50), cond char(255), software char(255), os char(25), description char(255), comments char(255));
+
+create table id(id int primary key, id2 int);
+
+insert into id (id, id2) value (0, NULL);
+
+CREATE USER 'ocean'@'localhost' IDENTIFIED BY 'digital';
+
+GRANT ALL PRIVILEGES ON *.* TO 'ocean'@'localhost' WITH GRANT OPTION;
+
+CREATE USER 'ocean'@'%' IDENTIFIED BY 'digital';
+
+GRANT ALL PRIVILEGES ON *.* TO 'ocean'@'%' WITH GRANT OPTION;
+
+grant select, insert, update, delete on sales_db.* to 'ocean@localhost' identified by "digital";
